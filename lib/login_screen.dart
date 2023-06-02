@@ -1,7 +1,8 @@
-import 'package:appflutter/home.dart';
+
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,17 +10,17 @@ class LoginScreen extends StatelessWidget {
     String email = "";
     String senha = "";
 
-    void Entrar(){
+   /* void Entrar(){
       if(email.contains("@") && senha.isNotEmpty){
         CircleApp();
       }else{
         print ("Email ou Senha está incorretos");
       }
-    }
+    } */
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Entrar"),
+        title: const Text("Login"),
         centerTitle: true,
 
       ),
@@ -70,8 +71,11 @@ class LoginScreen extends StatelessWidget {
                 onPressed: (){
                   print("Email $email");
                   print("Email $senha");
-                  Entrar();
-                  Navigator.pushNamed(context, "/home");
+                  if(email.contains("@") && senha.isNotEmpty) {
+                      Navigator.pushNamed(context, "/home");
+                  }else{
+                    print("Email ou senha incorretos tente novamente");
+                  }
                 },
                 child: const Text(
                   "Entrar",
