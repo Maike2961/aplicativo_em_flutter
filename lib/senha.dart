@@ -32,8 +32,10 @@ class esquecisenha extends StatelessWidget {
     }
 
     return Scaffold(
+      backgroundColor: Colors.white30,
       appBar: AppBar(
         title: Text("Nova senha"),
+        backgroundColor: Colors.deepOrange.shade700,
       ),
       body: SafeArea(
         child: Column(
@@ -41,11 +43,23 @@ class esquecisenha extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: TextFormField(
+              child: TextField(
                 decoration: InputDecoration(
-                  hintText: "Digite o seu E-mail",
+                  labelText: "Digite seu E-mail",
+                  labelStyle: TextStyle(
+                    color: Colors.white,
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                    ),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Colors.white
+                    ),
+                  ),
                 ),
-
                 onChanged: (text){
                   email = text;
                 },
@@ -59,6 +73,19 @@ class esquecisenha extends StatelessWidget {
               child: TextField(
                   decoration: InputDecoration(
                     labelText: "Digite sua nova Senha",
+                    labelStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                      ),
+                    ),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Colors.white
+                      ),
+                    ),
                   ),
                   obscureText: true,
                   onChanged: (text){
@@ -75,6 +102,19 @@ class esquecisenha extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(
                   labelText: "Digite Novamente sua nova Senha",
+                  labelStyle: TextStyle(
+                    color: Colors.white,
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                    ),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Colors.white
+                    ),
+                  ),
                 ),
                 keyboardType: TextInputType.visiblePassword,
 
@@ -89,7 +129,20 @@ class esquecisenha extends StatelessWidget {
               print(validarEmail());
               print(confere());
             },
-              child: Text("Retornar"),
+                child: const Text(
+                  "Retornar",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.white,
+                  ),
+                ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.deepOrangeAccent[700]),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0),
+                    ),
+                  ),
+                ),
 
 
 

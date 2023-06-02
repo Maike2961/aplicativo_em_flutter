@@ -17,7 +17,7 @@ class CircleApp extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 70.0,
-                backgroundImage: AssetImage("https://img.freepik.com/fotos-premium/ilustracao-conceitual-de-tecnologia-de-fundo-futurista-abstrato-de-inteligencia-artificial_860978-426.jpg?w=900"),
+                backgroundColor: Colors.indigo,
               ),
               Text(
                 "Maike Costa Silva",

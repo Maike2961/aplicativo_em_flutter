@@ -1,8 +1,11 @@
 
+import 'package:appflutter/models/user.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+
+  TextEditingController _emailInputController = TextEditingController();
+  TextEditingController _senhaInputController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,7 @@ class LoginScreen extends StatelessWidget {
             children: <Widget> [
               const SizedBox(height: 100.0),
               TextFormField(
+                controller: _emailInputController,
                 decoration:const InputDecoration(
                     labelText: "E-mail",
                   labelStyle: TextStyle(
@@ -62,6 +66,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 100.0),
 
               TextFormField(
+                controller: _senhaInputController,
                 decoration:const InputDecoration(
                     labelText: "Senha",
                     labelStyle: TextStyle(
@@ -108,8 +113,9 @@ class LoginScreen extends StatelessWidget {
                 height: 44.0,
                 child: ElevatedButton(
                   onPressed: (){
-                    print("Email $email");
-                    print("Email $senha");
+                    _doSignUp();
+                    //print("Email $email");
+                    //print("Email $senha");
                     if(email.contains("@") && senha.isNotEmpty) {
                         Navigator.pushNamed(context, "/home");
                     }else{
@@ -138,4 +144,10 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+  void _doSignUp(){
+    User newUser = User(email: _emailInputController.text, senha: _senhaInputController.text);
+
+    print(newUser);
+  }
+
 }
